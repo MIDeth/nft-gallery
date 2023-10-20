@@ -55,7 +55,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pb-8 gap-y-3">
-      <div className="flex w-full flex-col items-center justify-center gap-y-2 rounded-b-[4rem] bg-[#80B3FF] py-12">
+      <div className="mx-14 my-10 flex w-11/12 flex-col items-center justify-center gap-y-2 rounded-[4rem] bg-[#80B3FF] py-6">
         <input
           disabled={fetchForCollection}
           className="w-2/5 px-2 py-2 text-gray-800 rounded-lg bg-slate-100 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
