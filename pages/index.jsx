@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
-import { NFTCard } from './components/nftCard'
+import { NFTCard } from '../components/nftCard'
 
 const Home = () => {
   const [wallet, setWalletAddress] = useState('')
