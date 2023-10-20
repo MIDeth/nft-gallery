@@ -55,10 +55,10 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pb-8 gap-y-3">
-      <div className="mx-14 my-10 flex w-11/12 flex-col items-center justify-center gap-y-2 rounded-[4rem] bg-[#80B3FF] py-6">
+      <div className="mx-14 my-10 flex w-9/12 flex-col items-center justify-center gap-y-2 rounded-[4rem] bg-[#80B3FF] py-10">
         <input
           disabled={fetchForCollection}
-          className="w-2/5 px-2 py-2 text-gray-800 rounded-lg bg-slate-100 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
+          className="font-second my-1.5 h-12  w-[27rem] rounded-md border-2 border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-black placeholder-opacity-95 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
           onChange={(e) => {
             setWalletAddress(e.target.value)
           }}
@@ -67,7 +67,7 @@ const Home = () => {
           placeholder="Add your wallet address"
         ></input>
         <input
-          className="w-2/5 px-2 py-2 text-gray-800 rounded-lg bg-slate-100 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
+          className="font-second my-1.5 h-12 w-[27rem] rounded-md border-2 border-blue-700 bg-slate-200 pl-4 text-black placeholder-black placeholder-opacity-95"
           onChange={(e) => {
             setCollectionAddress(e.target.value)
           }}
@@ -98,7 +98,7 @@ const Home = () => {
           Let's go!{' '}
         </button>
       </div>
-      <div className="flex flex-wrap justify-center w-5/6 mt-4 gap-y-12 gap-x-2">
+      <div className="flex flex-wrap justify-center w-9/12 mt-4 border-2 border-black gap-y-12 gap-x-2">
         {NFTs.length &&
           NFTs.map((nft) => {
             return <NFTCard nft={nft}></NFTCard>
