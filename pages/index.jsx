@@ -55,48 +55,53 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pb-8 ">
-      <div className="mb-10 flex w-full flex-col justify-start bg-[#4477CE] py-12 pl-12">
-        <input
-          disabled={fetchForCollection}
-          className="font-second my-1.5 h-12  w-[70%] rounded-[12px] border-2 md:w-[32%] md border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-[#727272] focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
-          onChange={(e) => {
-            setWalletAddress(e.target.value);
-          }}
-          value={wallet}
-          type={"text"}
-          placeholder="Add your wallet address"
-        ></input>
-        <input
-          className="font-second my-1.5 h-12  w-[70%] rounded-[12px] border-2 md:w-[32%] md border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-[#727272] focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
-          onChange={(e) => {
-            setCollectionAddress(e.target.value);
-          }}
-          value={collection}
-          type={"text"}
-          placeholder="Add the collection address"
-        ></input>
-        <label className="mt-3 ml-5 text-black active:ring-2">
+      <div className="mb-10 flex w-full flex-col justify-start bg-[#4477CE] md:py-12 py-0 pl-12 relative">
+        <div className="flex flex-col justify-start">
           <input
+            disabled={fetchForCollection}
+            className="font-second my-1.5 h-12  w-[70%] rounded-[12px] border-2 md:w-[32%] md border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-[#727272] focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
             onChange={(e) => {
-              setFetchForCollection(e.target.checked);
+              setWalletAddress(e.target.value);
             }}
-            type={"checkbox"}
-            className="mr-2 -mt-1 bg-white rounded-[5px] w-[15px] h-[15px] cursor-pointer"
+            value={wallet}
+            type={"text"}
+            placeholder="Add your wallet address"
           ></input>
-          Fetch for collection
-        </label>
-        <button
-          className={
-            "mt-3 md:w-[12%] w-[50%] rounded-[9px] ml-[10%] bg-[#A5D7E8] px-4 py-2 text-white disabled:bg-slate-500"
-          }
-          onClick={() => {
-            if (fetchForCollection) {
-              fetchNFTsForCollection();
-            } else fetchNFTs();
-          }}
-        >
-          Submit
-        </button>
+          <input
+            className="font-second my-1.5 h-12  w-[70%] rounded-[12px] border-2 md:w-[32%] md border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-[#727272] focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
+            onChange={(e) => {
+              setCollectionAddress(e.target.value);
+            }}
+            value={collection}
+            type={"text"}
+            placeholder="Add the collection address"
+          ></input>
+          <label className="mt-3 ml-5 text-black active:ring-2">
+            <input
+              onChange={(e) => {
+                setFetchForCollection(e.target.checked);
+              }}
+              type={"checkbox"}
+              className="mr-2 -mt-1 bg-white rounded-[5px] w-[15px] h-[15px] cursor-pointer"
+            ></input>
+            Fetch for collection
+          </label>
+          <button
+            className={
+              "mt-3 md:w-[12%] w-[50%] rounded-[9px] ml-[10%] bg-[#A5D7E8] px-4 py-2 text-white disabled:bg-slate-500"
+            }
+            onClick={() => {
+              if (fetchForCollection) {
+                fetchNFTsForCollection();
+              } else fetchNFTs();
+            }}
+          >
+            Submit
+          </button>
+        </div>
+        <div className="md:absolute md:right-20 block md:mt-0 mt-10">
+          <img src="/logo.svg" className=" md:h-64 h-28 " />
+        </div>
       </div>
       <div className="flex flex-wrap justify-center md:justify-between w-full mt-4">
         {NFTs.length &&
