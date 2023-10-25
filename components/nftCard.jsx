@@ -1,13 +1,13 @@
 export const NFTCard = ({ nft }) => {
   return (
-    <div className="flex flex-col w-1/4">
-      <div className="rounded-md">
+    <div className="flex flex-col w-[250px] h-[373px] border-4 border-white relative">
+      <div className=" h-[67%] flex justify-center items-center">
         <img
-          className="object-cover w-full h-128 rounded-t-md"
+          className="object-contain h-full"
           src={nft.media[0].gateway}
         ></img>
       </div>
-      <div className="flex flex-col px-2 py-3 y-gap-2 h-110 rounded-b-md bg-slate-100 ">
+      <div className="flex flex-col y-gap-2 h-[21%] bg-slate-100 ">
         <div className="">
           <h2 className="text-xl text-gray-800">{nft.title}</h2>
           <p className="text-gray-600">
@@ -21,14 +21,11 @@ export const NFTCard = ({ nft }) => {
           )}`}</p>
         </div>
 
-        <div className="flex-grow mt-2">
-          <p className="text-gray-600">{nft.description?.substr(0, 150)}</p>
-        </div>
-        <div className="flex justify-center mb-1">
+        <div className="flex justify-center w-full h-[12%] bottom-0 absolute">
           <a
             target={'_blank'}
             href={`https://etherscan.io/token/${nft.contract.address}`}
-            className="w-1/2 px-4 py-2 text-center text-white bg-blue-500 cursor-pointer rounded-m"
+            className="w-full px-4 py-2 text-center text-white bg-blue-500 cursor-pointer rounded-m"
           >
             View on etherscan
           </a>
