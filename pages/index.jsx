@@ -53,9 +53,15 @@ const Home = () => {
     }
   }
 
+  const content =
+    NFTs &&
+    NFTs.map((nft) => {
+      return <NFTCard nft={nft}></NFTCard>
+    })
+
   return (
-    <div className="flex flex-col items-center justify-center pb-8 gap-y-3">
-      <div className="mx-14 my-10 flex w-9/12 flex-col items-center justify-center gap-y-2 rounded-[4rem] bg-[#80B3FF] py-10">
+    <div className="page flex flex-col items-center justify-center gap-y-3 pb-8">
+      <div className="mx-14 my-10 flex w-9/12 flex-col items-center justify-center gap-y-2 rounded-[3rem] bg-[#80B3FF] py-10">
         <input
           disabled={fetchForCollection}
           className="font-second my-1.5 h-12  w-[27rem] rounded-md border-2 border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-black placeholder-opacity-95 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
@@ -67,7 +73,7 @@ const Home = () => {
           placeholder="Add your wallet address"
         ></input>
         <input
-          className="font-second my-1.5 h-12 w-[27rem] rounded-md border-2 border-blue-700 bg-slate-200 pl-4 text-black placeholder-black placeholder-opacity-95"
+          className="font-second my-1.5 h-12  w-[27rem] rounded-md border-2 border-blue-700 bg-slate-200 px-2 py-2 pl-4 text-black placeholder-black placeholder-opacity-95 focus:outline-blue-300 disabled:bg-slate-50 disabled:text-gray-50"
           onChange={(e) => {
             setCollectionAddress(e.target.value)
           }}
@@ -95,14 +101,14 @@ const Home = () => {
             } else fetchNFTs()
           }}
         >
-          Let's go!{' '}
+          Let's go!
         </button>
       </div>
-      <div className="flex flex-wrap justify-center w-9/12 mt-4 border-2 border-black gap-y-12 gap-x-2">
-        {NFTs.length &&
-          NFTs.map((nft) => {
-            return <NFTCard nft={nft}></NFTCard>
-          })}
+      <div
+        class
+        Name="mt-4 flex w-9/12 flex-wrap justify-center gap-y-12 gap-x-2 bg-[#1AACAC] hidden"
+      >
+        {content}
       </div>
     </div>
   )
