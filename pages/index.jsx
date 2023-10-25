@@ -55,6 +55,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col items-center justify-center pb-8 ">
+      <Head>
+        <title>MID NFTs gallery</title>
+      </Head>
       <div className="mb-10 flex w-full flex-col justify-start bg-[#4477CE] md:py-12 py-0 pl-12 relative">
         <div className="flex flex-col justify-start">
           <input
